@@ -90,6 +90,8 @@
     transition: var(--transition);
     float: right;
     padding-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:600;
 }
 .nameAndDelete{
     display:inline-block;

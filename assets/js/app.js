@@ -46,7 +46,7 @@ function createListItem(id, name, desc, size){
                             </span>
     
                             <button class="delete-btn">
-                                del
+                                remove
                             </button>
                         </div>
                         <span class="space">
@@ -116,7 +116,7 @@ function confirmSub(){
                                 </span>
         
                                 <button class="delete-btn">
-                                    del
+                                    remove
                                 </button>
                             </div>
                             <span class="space">
