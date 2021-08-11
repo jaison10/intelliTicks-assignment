@@ -23,10 +23,10 @@ function setupItems() {
     let items = getLocalStorage();
   
     if (items.length > 0) {
-      items.forEach(function (item) {
-        createListItem(item.id, item.name, item.desc, item.size);
-      });
-      emptyNote.classList.add("hideme");
+        items.forEach(function (item) {
+            createListItem(item.id, item.name, item.desc, item.size);
+        });
+        emptyNote.classList.add("hideme");
     }
     else{
         emptyNote.classList.remove("hideme");
@@ -52,19 +52,23 @@ function createListItem(id, name, desc, size){
                         <span class="space">
                             ${desc}
                         </span>`;
+    const deleteBtn = element.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", deleteItem);
     listOfItems.appendChild(element);
 }
 
 addNewButton.addEventListener('click', openForm);
 
 function openForm(){
+    console.log("New item form");
     const oldBox = document.querySelector(".mainBox");
     const newBox = document.querySelector(".formBox");
-    const emptyNote = document.querySelector(".formBox");
-    // oldBox.style.visibility = "hidden";
     oldBox.classList.add("hideme");
+    oldBox.classList.remove("showme");
     emptyNote.classList.add("hideme");
+    emptyNote.classList.remove("showme");
     newBox.classList.add("showme");
+    newBox.classList.remove("hideme");
 }
 
 cancel.addEventListener('click', cancelSub);
@@ -78,6 +82,10 @@ function cancelSub(){
     newBox.classList.remove("showme");
     newBox.classList.add("hideme");
     console.log(onlyPropLists.children.length);
+    // Clearing form.
+    nameFromForm.value = "";
+    descFromForm.value = "";
+    sizeFromForm.value = "";
 }
 
 function confirmSub(){
