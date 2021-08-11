@@ -64,11 +64,23 @@
     margin: 0% 0% 3% 5%;
 }
 .notify{
-    float: right;
-    margin-right: 30px;
-    padding-bottom: 20px;
+    float: left;
+    margin-right: 0px;
+    padding-bottom: 0px;
     color: red;
+    /* width: 100px; */
+    visibility: hidden;
 }
+
+.AddedNotify{
+    float: right;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    color: green;
+    /* width: 100px; */
+    visibility: hidden;
+}
+
 .delete-btn {
     background: transparent;
     border-color: transparent;
@@ -128,8 +140,8 @@
 
 .buttons{
     display:flex;
-    width: 40%;
-    margin-left: 55%;
+    width: 50%;
+    margin-left: 45%;
 }
 
 

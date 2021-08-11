@@ -22,16 +22,16 @@
                     
                         <div class="content">
                             <span class="emptyNote"> Oh, seems empty!</span>
-                            <span class="notify"> Enter some value.</span>
+                            <span class="AddedNotify">Added successfully.</span>
                             <div class="listOfOnlyItems">
-                                <div class="oneProp">
+                                <!-- <div class="oneProp">
                                         <div class="space nameAndDelete">
                                             <span>
                                                 Name goes here (size here)
                                             </span>
-                                            <!-- <button type="button" class="delete-btn">
+                                            <button type="button" class="delete-btn">
                                                 <i class="fas fa-trash"></i>
-                                            </button> -->
+                                            </button>
                                             <button class="delete-btn">
                                                 del
                                             </button>
@@ -40,7 +40,7 @@
                                             Desc goes here.
                                         </span>
 
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -52,27 +52,29 @@
                 <form class="form">
                     <div class="boxOfLabelInput">
                         <label class="formLabels" >Name</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <input class="inputs" type="text" placeholder="Enter the name">
+                        <input id="name" class="inputs" type="text" placeholder="Enter the name">
                     </div>
                     <div class="boxOfLabelInput">
                         <label class="formLabels" >Description</label>
-                        <textarea class="inputs" name="desc" id="" cols="70" rows="7" placeholder="Enter the desc"></textarea>
+                        <textarea class="inputs" name="desc" id="desc" cols="70" rows="7" placeholder="Enter the desc"></textarea>
                     </div>
                     <div class="boxOfLabelInput">
                         <label class="formLabels">Size</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <input class="inputs" type="text" placeholder="Enter the size">
+                        <input class="inputs" type="number" id="size" placeholder="Enter the size">
                     </div>
 
-                    <div class="buttons">
-                        <div class="button-box2">
-                            <button id="cancelButton" class="btn2"><span class="buttonName2">Cancel</span></button>
-                        </div>
-                        <div class="button-box2">
-                            <button id="confirmButton" class="btn2" type="submit"><span class="buttonName2">Add</span></button>
-                        </div>
-                    </div>
+                    
                     
                 </form>
+                <div class="buttons">
+                    <span class="notify"> Enter some value.</span>
+                    <div class="button-box2">
+                        <button id="cancelButton" class="btn2"><span class="buttonName2">Cancel</span></button>
+                    </div>
+                    <div class="button-box2">
+                        <button id="confirmButton" class="btn2" type="submit"><span class="buttonName2">Add</span></button>
+                    </div>
+                </div>
             </div>
         </div>
         
