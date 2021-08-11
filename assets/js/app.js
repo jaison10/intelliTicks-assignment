@@ -110,13 +110,16 @@ function confirmSub(){
                             <span class="space">
                                 ${desc}
                             </span>`;
+        const deleteBtn = element.querySelector(".delete-btn");
+        deleteBtn.addEventListener("click", deleteItem);
         listOfItems.appendChild(element);
         addToLocalStorage(id, name, desc, size);
-        addedNote.classList.add("showme");
-        setTimeout(() => {
-            addedNote.classList.remove("showme");
-            addedNote.classList.add("hideme");  
-        }, 3000);
+        displayAlert("Added successfully.", "green");
+        
+        // Clearing form.
+        nameFromForm.value = "";
+        descFromForm.value = "";
+        sizeFromForm.value = "";
     }    
 }
 
@@ -145,4 +148,45 @@ function getLocalStorage() {
     return localStorage.getItem("props")
       ? JSON.parse(localStorage.getItem("props"))
       : [];
+}
+
+//  Deleting the items.
+
+function deleteItem(e){
+    console.log("At deleting part.");
+    const element = e.currentTarget.parentElement.parentElement;
+    const id = element.dataset.id;
+    console.log("Element is: ", element);
+    console.log("ID is: ", id);
+    listOfItems.removeChild(element);
+    if (listOfItems.children.length === 0) {
+        emptyNote.classList.remove("hideme");
+        emptyNote.classList.add("showme");
+    }
+    displayAlert("Item removed", "red");
+    //  removing from the local storage
+    removeFromLocalStorage(id);
+}
+
+function removeFromLocalStorage(id){
+    let items = getLocalStorage();
+
+    items = items.filter(function (item) {
+        if (item.id !== id) {
+        return item;
+        }
+    });
+
+    localStorage.setItem("props", JSON.stringify(items));
+}
+
+// Info on adding and removing
+function displayAlert(content, color){
+    addedNote.classList.add("showme");
+    addedNote.innerText = content;
+    addedNote.style.color = color;
+    setTimeout(() => {
+        addedNote.classList.remove("showme");
+        addedNote.classList.add("hideme");  
+    }, 2000);
 }
