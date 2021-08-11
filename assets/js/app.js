@@ -69,6 +69,10 @@ function openForm(){
     emptyNote.classList.remove("showme");
     newBox.classList.add("showme");
     newBox.classList.remove("hideme");
+
+    // console.log( onlyPropLists.children.length);
+    // const v = onlyPropLists.children.length;
+    // newBox.css("margin-top", "-40%");
 }
 
 cancel.addEventListener('click', cancelSub);
@@ -164,8 +168,8 @@ function deleteItem(e){
     console.log("At deleting part.");
     const element = e.currentTarget.parentElement.parentElement;
     const id = element.dataset.id;
-    console.log("Element is: ", element);
-    console.log("ID is: ", id);
+    // console.log("Element is: ", element);
+    // console.log("ID is: ", id);
     listOfItems.removeChild(element);
     if (listOfItems.children.length === 0) {
         emptyNote.classList.remove("hideme");
